@@ -21,3 +21,66 @@ body{
     color: var(--primary-colour);
     background-color: var(--bg-colour);
 }
+
+header{
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+}
+
+#input_box{
+    height: 70vh;
+    padding-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-inner-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#user_input input[type=number]{
+    font-size: 1.3rem;
+    font-weight: 600;
+    height: 2rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+#user_input input[type=number]:focus{
+background-color: var(--secondary-colour);
+}
+
+#user_input button[type=submit]{
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 12px;
+    background-color: var(--secondary-colour);
+}
+
+#user_input button[type=submit]:hover{
+padding: 0.8rem;
+border-radius: 12px;
+transform: translateY(-2px);
+background-color: var(--primary-colour);
+}
+
+#floors_container{
+visibility: hidden;
+overflow: auto;
+background-color: var(--primary-colour);
+}
+
+.floor{
+    height: var(--floor-height);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2vw;
+    gap: 2vw;
+    border-top: 1px solid var(--bg-colour);
+    border-bottom: 1px solid var(--bg-colour);
+}
