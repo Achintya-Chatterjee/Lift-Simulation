@@ -84,3 +84,98 @@ background-color: var(--primary-colour);
     border-top: 1px solid var(--bg-colour);
     border-bottom: 1px solid var(--bg-colour);
 }
+
+.floor .floor_number{
+    color: var(--bg-colour);
+    font-size: 1.3rem;
+    font-weight: bold;
+
+}
+
+.floor_details{
+    margin-right: 2rem;
+    height: var(--floor-height);
+}
+
+.lift{
+    height: var(--floor-height);
+    width: 90px;
+    background-color: var(--secondary-colour);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+
+.door{
+    background-color: var(--bg-colour);
+    height: 100%;
+    width: 50%;
+    transition: all 2.5s;
+}
+
+.left_door{
+    border-right: 1px solid var(--primary-colour);
+}
+
+.right_door{
+    border-left: 1px solid var(--primary-colour);
+}
+
+.left_move{
+    transform: translateX(-100%);
+}
+.right_move{
+    transform: translateX(-100%);
+}
+
+.floor_details{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.lift_control{
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: var(--primary-colour);
+}
+
+
+.lift_control.up{
+    background-color: var(--bg-colour);
+}
+
+.lift_control.down{
+    background-color: var(--bg-colour);
+}
+
+button{
+    cursor: pointer;
+}
+
+button.up:hover{
+    color: var(--bg-colour);
+    background-color: var(--primary-colour);
+}
+
+button.down:hover{
+    color: var(--bg-colour);
+    background-color: var(--primary-colour);
+}
+
+.floor_number{
+    font-size: 1rem;
+}
+
+.note{
+    color: rgb(243, 247, 21);
+}
+
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
