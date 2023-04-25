@@ -179,3 +179,21 @@ button.down:hover{
     align-items: center;
 }
 
+/* media queries - for responsiveness */ 
+@media (width <= 380px) {
+    :root{
+        --floor-height: 60px;
+    }
+    html{
+        font-size: 10px;
+    }
+
+    .lift_control{
+        font-size: 8px;
+        padding: 2px;
+    }
+
+    p.floor_number{
+        font-size: 8px;
+    }
+}
