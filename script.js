@@ -157,17 +157,17 @@ function renderFloors(totalFloors){
 }
 
 function renderLifts(totalLifts){
-    const groundFloor = document.querySelector("#floors-container>#floor-0");
+    const groundFloor = document.querySelector("#floors_container>#floor-0");
     for(let liftNumber = 1; liftNumber <= totalLifts; liftNumber++){
         const currentLift = document.createElement("section");
         currentLift.className = "lift";
         currentLift.id = `lift-${liftNumber}`;
         currentLift.innerHTML = 
         `
-            <section class="door left-door"></section>
-            <section class="door right-door"></section>
+            <section class="door left_door"></section>
+            <section class="door right_door"></section>
         `;
-        liftsAvailabilitiy.set(`lift-${liftNumber}`, true);
+        liftsAvailability.set(`lift-${liftNumber}`, true);
         liftAt.set(`lift-${liftNumber}`, 0);
         groundFloor.appendChild(currentLift);
     }
