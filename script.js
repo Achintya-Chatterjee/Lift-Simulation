@@ -8,13 +8,14 @@ const pendingCalls = [];
 
 
 document.querySelector("button#submit").addEventListener("click",(event)=>{
-    event.preventDefault();
+    event.preventDefault(); //to stop page from reloading and showing values in the url i.e. preventing default submit behaviour
 
     const floorsInput = document.querySelector("#floors_input");
     const liftsInput = document.querySelector("#lifts_input");
     floorsCount =  floorsInput.value;
     liftsCount = liftsInput.value;
 
+    //if liftsCount or floorsCount is invalid, showing alert and return
     if(floorsCount <=0 || floorsCount > 100 || liftsCount <=0 || liftsCount > 10){
         alert("Inputs are invalid! Please Try Again.");
         return;
@@ -35,6 +36,7 @@ document.querySelector("button#submit").addEventListener("click",(event)=>{
 renderFloors(floorsCount);
 renderLifts(liftsCount);
 
+    //listen to click events on buttons - up/down
 });
 
 function handleLiftCall(event){
@@ -48,8 +50,10 @@ function handleLiftCall(event){
         }
         return;
     }
-    for(let lifNumber = 1; liftNumber <= liftsCount; liftNumber++){
-        const liftId = `lift-${lifNumber}`;
+
+         //search for a freeLift
+    for(let liftNumber = 1; liftNumber <= liftsCount; liftNumber++){
+        const liftId = `lift-${liftNumber}`;
         if (liftsAvailability.get(liftId)) {
             moveLift(floorId, liftId);
             return;
@@ -61,14 +65,14 @@ function handleLiftCall(event){
 function moveLift(floorId, liftId){
     if(floorLiftMap.get(floorId) != null){
         const mappedLiftId = floorLiftMap.get(floorId);
-        if(liftsAvailabilitiy.get(mappedLiftId)){
-            liftsAvailabilitiy.set(mappedLiftId, false);
+        if(liftsAvailability.get(mappedLiftId)){
+            liftsAvailability.set(mappedLiftId, false);
             openAndCloseDoors(floorId, mappedLiftId);
         }
         return;
     }
 
-    liftsAvailabilitiy.set(liftId, false);
+    liftsAvailability.set(liftId, false);
     floorLiftMap.set(floorId, liftId);
     //unmap previous floor-lift mapping with current lift
     floorLiftMap.forEach((value, key) => {
@@ -98,16 +102,16 @@ function moveLift(floorId, liftId){
 function openAndCloseDoors(floorId, liftId) {
 
     const lift = document.querySelector(`#${liftId}`);
-    const leftDoor = lift.querySelector(".left-door");
-    const rightDoor = lift.querySelector(".right-door");
-    leftDoor.classList.add("left-move");
-    rightDoor.classList.add("right-move");  
+    const leftDoor = lift.querySelector(".left_door");
+    const rightDoor = lift.querySelector(".right_door");
+    leftDoor.classList.add("left_move");
+    rightDoor.classList.add("right_move");  
     setTimeout(() => {
-        leftDoor.classList.remove("left-move");
-        rightDoor.classList.remove("right-move"); 
+        leftDoor.classList.remove("left_move");
+        rightDoor.classList.remove("right_move"); 
         //this lift will be free after 2500ms
         setTimeout(() => {
-            liftsAvailabilitiy.set(liftId, true);
+            liftsAvailability.set(liftId, true);
             if(pendingCalls.length > 0){
                 const floorIdFromRemainingCalls = pendingCalls[0];
                 pendingCalls.shift();
@@ -126,10 +130,10 @@ function renderFloors(totalFloors){
         currentFloor.id = floorId;
         currentFloor.innerHTML = 
         `
-                <section class="floor-details">
-                    <button class="lift-control up">UP</button>
-                    <p class="floor-number">Floor-${floorNumber}</p> 
-                    <button class="lift-control down">DOWN</button>
+                <section class="floor_details">
+                    <button class="lift_control up">UP</button>
+                    <p class="floor_number">Floor-${floorNumber}</p> 
+                    <button class="lift_control down">DOWN</button>
                 </section>
         `;
         currentFloor.querySelector(".up").addEventListener("click", (event) => handleLiftCall(event));
@@ -143,9 +147,9 @@ function renderFloors(totalFloors){
     groundFloor.id = `floor-0`;
     groundFloor.innerHTML = 
     `
-            <section class="floor-details">
-                <button class="lift-control up" >UP</button>
-                <p class="floor-number">Floor-0</p> 
+            <section class="floor_details">
+                <button class="lift_control up" >UP</button>
+                <p class="floor_number">Floor-0</p> 
             </section>
     `;
     groundFloor.querySelector(".up").addEventListener("click", (event) => handleLiftCall(event));
