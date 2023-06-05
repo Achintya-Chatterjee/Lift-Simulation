@@ -1,4 +1,4 @@
-const floorHeightInPx = getComputedStyle(document.querySelector("html")).getPropertyValue("--floor-height");
+const floorHeightInPx = getComputedStyle(document.querySelector("html")).getPropertyValue("--floor_height");
 const floorHeight = parseInt(floorHeightInPx.slice(0,floorHeightInPx.length - 2));
 let liftsCount,floorsCount;
 const liftsAvailability = new Map();
@@ -36,7 +36,7 @@ document.querySelector("button#submit").addEventListener("click",(event)=>{
 renderFloors(floorsCount);
 renderLifts(liftsCount);
 
-    //listen to click events on buttons - up/down
+    //listening to click events on buttons - up/down
 });
 
 function handleLiftCall(event){
@@ -119,7 +119,7 @@ function openAndCloseDoors(floorId, liftId) {
             }
         }, 2500);
     }, 2500);
-}
+} 
 
 function renderFloors(totalFloors){
     const floorsContainer = document.querySelector("#floors_container");
