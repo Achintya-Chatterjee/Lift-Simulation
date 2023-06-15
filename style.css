@@ -127,7 +127,7 @@ background-color: var(--primary-colour);
     transform: translateX(-100%);
 }
 .right_move{
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 
 .floor_details{
