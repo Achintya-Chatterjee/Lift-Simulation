@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta name="viewport" content="width=device-width", initial scale="1.0">
-        <link href="style.css" rel="stylesheet">
-
-        <title>Lift Simulation by Achintya</title>
-    </head>
-
-    <body>
-        <header>
-            <h1>Welcome to Lift Simulation</h1>
-            <section id="input_count">
-                <h2 id="floors_count"></h2>
-                <h2 id="lifts_count"></h2>
-            </section>
-        </header>
-        <main>
-            <section id="input_box">
-                <div id="input_inner_box">
-                    <h2> Enter your input to Start</h2>
-                    <form id="user_input">
-                        <div class="flex_center">
-                            <div>
-                                <input name="floors_input" id="floors_input" min="1" max="100" required type="number" placeholder="Floors">
-                                <input name="lifts_input" id="lifts_input" min="1" max="10" required type="number" placeholder="Lifts">
-                            </div>
-                            <button id="submit" type="submit">Start Simulation</button>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Lift Simulation by Achintya</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Lift Simulation</h1>
+        <section id="input_count">
+            <h2 id="floors_count"></h2>
+            <h2 id="lifts_count"></h2>
+        </section>
+    </header>
+    <main>
+        <button id="back_button" style="display: none;">Back</button>
+        <section id="input_box">
+            <div id="input_inner_box">
+                <h2>Enter your input to Start</h2>
+                <form id="user_input">
+                    <div class="flex_center">
+                        <div>
+                            <input name="floors_input" id="floors_input" min="1" max="100" required type="number" placeholder="Floors">
+                            <input name="lifts_input" id="lifts_input" min="1" max="10" required type="number" placeholder="Lifts">
                         </div>
-
-                    </form>
-                    <h3><span class="note">NOTE:</span> <span>Floors can be from 1 to 100</span></h3>
-                    <h3><span class="note">NOTE:</span> <span>Lifts can be from 1 to 10</span></h3>
-
-                </div>
-
-            </section>
-            <section id="floors_container"></section>
-        </main>
-        <script src="script.js"></script>
-    </body>
+                        <button id="submit" type="submit">Start Simulation</button>
+                    </div>
+                </form>
+                <h3 class="note-cls"><span class="note">NOTE:</span> Floors can be from 1 to 100</h3>
+                <h3 class="note-cls"><span class="note">NOTE:</span> Lifts can be from 1 to 10</h3>
+            </div>
+        </section>
+        <section id="floors_container"></section>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>

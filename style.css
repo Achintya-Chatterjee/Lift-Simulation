@@ -26,6 +26,10 @@ header{
     padding: 2rem 0 2rem 0;
     text-align: center;
 }
+h2{
+    display: block;
+    padding: 0 8%;
+}
 
 #input_box{
     height: 70vh;
@@ -107,7 +111,6 @@ background-color: var(--primary-colour);
 
 }
 
-
 .door{
     background-color: var(--bg-colour);
     height: 100%;
@@ -172,6 +175,11 @@ button.down:hover{
 .note{
     color: rgb(243, 247, 21);
 }
+.note-cls{
+    display:block;
+    padding:0 8%;
+    margin: 2% 0;
+}
 
 .flex_center{
     display: flex;
@@ -196,4 +204,23 @@ button.down:hover{
     p.floor_number{
         font-size: 8px;
     }
+}
+
+#back_button {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-colour);
+    color: var(--primary-colour);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+  
+#back_button:hover {
+    background-color: var(--hover-colour);
+    color: var(--bg-colour);
 }
