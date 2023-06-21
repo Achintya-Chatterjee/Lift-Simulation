@@ -355,3 +355,5 @@ function renderLifts(totalLifts){
         groundFloor.appendChild(currentLift);
     }
 }
+
+
